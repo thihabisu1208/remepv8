@@ -1,0 +1,18 @@
+{
+    "name": "Re-Map To Remind You Not To Forget Stuff",
+    "short_name": "RE-Map",
+    "icons": [{
+        "src": "",
+        "type": "image/png",
+        "sizes": ""
+    }],
+    "start_url": "index.html",
+    "scope": ".",
+    "display": "standalone",
+    "orientation": "portrait-primary",
+    "background_color": "#fff",
+    "theme_color": "#fff",
+    "description": "A simple map program",
+    "dir": "ltr",
+    "lang": "en-US"
+}
