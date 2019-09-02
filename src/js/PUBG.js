@@ -22,6 +22,12 @@ new Vue({
           alert(err.message);
         });
     },
+    googleLogin() {
+      const provider = new firebase.auth.GoogleAuthProvider()
+      firebase.auth().signInWithPopup(provider).then(cred => {
+        window.location = 'memo/index.html';
+      })
+    },
     // Sign up the User
     signUp() {
       const email = document.querySelector('.signup_form_mail').value;

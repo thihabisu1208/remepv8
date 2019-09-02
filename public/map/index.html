@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../src/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../src/css/reset.css">
+  <link rel="stylesheet" href="../src/css/style.css">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <title>Map</title>
+</head>
+
+<body>
+  <main id="map">
+    <header class="header">
+      <a href="../memo/index.html" class="header_toBack"><i class="fas fa-arrow-left""></i></a>
+        <h2>MAP</h2>
+        <div class=" header_nav" onclick="openNav()">
+          <span class="header_nav_icon"></span>
+          </div>
+    </header>
+    <div class="space">
+
+    </div>
+    <div id="mapShow">
+
+    </div>
+    <nav class="nav">
+      <div class="nav_bar"><span></span></div>
+      <div class="nav_category">
+        <div class="nav_category_box">
+          <div class="nav_category_box_icon convenienceStore">
+            <img src="../src/img/conveniencestore.png" alt="">
+          </div>
+          <div class="nav_category_box_word">
+            <p>コンビニ</p>
+          </div>
+        </div>
+        <div class="nav_category_box">
+          <div class="nav_category_box_icon superMarket">
+            <img src="../src/img/supermarket.png" alt="">
+          </div>
+          <div class="nav_category_box_word">
+            <p>スーパー</p>
+          </div>
+        </div>
+        <div class="nav_category_box">
+          <div class="nav_category_box_icon department">
+            <img src="../src/img/department.png" alt="">
+          </div>
+          <div class="nav_category_box_word">
+            <p>デパート</p>
+          </div>
+        </div>
+        <div class="nav_category_box">
+          <div class="nav_category_box_icon dollarStore">
+            <img src="../src/img/dollarstore.png" alt="">
+          </div>
+          <div class="nav_category_box_word">
+            <p>100円ショップ</p>
+          </div>
+        </div>
+        <div class="nav_category_box">
+          <div class="nav_category_box_icon drugStore">
+            <img src="../src/img/drugstore.png" alt="">
+          </div>
+          <div class="nav_category_box_word">
+            <p>ドラグストア</p>
+          </div>
+        </div>
+        <div class="nav_category_box">
+          <div class="nav_category_box_icon discountStore">
+            <img src="../src/img/discountstores.png" alt="">
+          </div>
+          <div class="nav_category_box_word">
+            <p>ドンキ</p>
+          </div>
+        </div>
+      </div>
+      <div class="nav_config">
+        <a href="#" class="nav_config_help">HELP</a>
+        <a href="#" class="nav_config_about">ABOUT US</a>
+      </div>
+    </nav>
+  </main>
+
+  <script src="../src/js/map.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvQ6Vzht_igewWR_vNSSK45aGnAQZcGdw&callback=initMap&libraries=places&library=spherical"
+    async refer>
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+  <script src="../src/js/PUBG.js"></script>
+
+
+</body>
+
+</html>

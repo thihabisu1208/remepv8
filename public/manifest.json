@@ -1,0 +1,29 @@
+{
+    "name": "Re-Map To Remind You Not To Forget Stuff",
+    "short_name": "RE-Map",
+    "icons": [{
+            "src": "/src/img/logo_main.png",
+            "type": "image/png",
+            "sizes": "144x144"
+        },
+        {
+            "src": "/src/img/logo_main.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/src/img/logo_main.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "start_url": "/index.html",
+    "scope": ".",
+    "display": "standalone",
+    "orientation": "portrait-primary",
+    "background_color": "#fff",
+    "theme_color": "#fff",
+    "description": "A simple map program",
+    "dir": "ltr",
+    "lang": "en-US"
+}

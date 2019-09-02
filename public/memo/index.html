@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <link rel="shortcut icon" href="../src/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../src/css/reset.css">
+  <link rel="stylesheet" href="../src/css/style.css">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <title>Memo</title>
+</head>
+
+<body>
+  <main id="memo">
+    <header class="header">
+      <h2>MEMO</h2>
+      <a href="../cart/index.html" class="header_cart"><i class="fas fa-shopping-cart"></i></a>
+    </header>
+
+    <div class="tab">
+      <div class="tab_nav">
+        <ul class="tabs ">
+          <li data-target="#konbiniMemo" class="active">コンビニ</li>
+          <li data-target="#superMemo">スーパー</li>
+          <li data-target="#departMemo">デパート</li>
+          <li data-target="#dollarStoreMemo">100円ショップ</li>
+          <li data-target="#drugStoreMemo">ドラグストア</li>
+          <li data-target="#donkiMemo">ドンキ</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="createMemo memoData showMemoData" id="konbiniMemo">
+      <input name="memoInputKonbini" type="text" class="memoInput" id="memoInputKonbini" required
+        placeholder="Memo を入れる">
+
+      <ul id="memoListKonbini">
+
+      </ul>
+    </div>
+
+    <div class="createMemo memoData" id="superMemo">
+      <input name="memoInputSuper" type="text" class="memoInput" id="memoInputSuper" required placeholder="Memo を入れる">
+      <ul id="memoListSuper">
+      </ul>
+    </div>
+
+
+    <div class="createMemo memoData" id="departMemo">
+      <input name="memoInputDepart" type="text" class="memoInput" id="memoInputDepart" required placeholder="Memo を入れる">
+      <ul id="memoListDepart">
+
+      </ul>
+    </div>
+
+
+    <div class="createMemo memoData" id="dollarStoreMemo">
+      <input name="memoInputDollarStore" type="text" class="memoInput" id="memoInputDollarStore" required
+        placeholder="Memo を入れる">
+      <ul id="memoListDollarStore">
+
+      </ul>
+    </div>
+
+
+    <div class="createMemo memoData" id="drugStoreMemo">
+      <input name="memoInputDrug" type="text" class="memoInput" id="memoInputDrug" required placeholder="Memo を入れる">
+      <ul id="memoListDrug">
+
+      </ul>
+    </div>
+
+
+    <div class="createMemo memoData" id="donkiMemo">
+      <input name="memoInputDonki" type="text" class="memoInput" id="memoInputDonki" required placeholder="Memo を入れる">
+      <ul id="memoListDonki">
+
+      </ul>
+    </div>
+
+    <!-- メモ入力 -->
+    <div class="send" v-if="send">
+      <form @submit.prevent="doSend" class="send_form">
+        <input type="text" placeholder="内容を入力してください" v-model="input" required>
+        <div class="send_form_btn">
+          <button>送信</button>
+        </div>
+
+      </form>
+    </div>
+
+    <nav class="nav">
+      <a href="../map/index.html" class="nav_map">
+        <p>
+          <i class="fas fa-2x fa-map-marker-alt"></i>
+        </p>
+      </a>
+      <div class="nav_memo" @click="viewSend">
+        <p><i class="far fa-2x fa-sticky-note"></i></p>
+      </div>
+    </nav>
+  </main>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.4.0/firebase-functions.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#config-web-app -->
+  <script src="../src/js/firebase.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+  <script src="../src/js/hammer.min.js"></script>
+  <script src="../src/js/memo.js"></script>
+  <script src="../src/js/PUBG.js"></script>
+
+</body>
+
+</html>

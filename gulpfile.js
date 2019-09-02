@@ -6,26 +6,26 @@ const sourcemaps = require('gulp-sourcemaps');
 
 const paths = {
   'src': {
-    'scss': 'src/scss/**/*.scss',
+    'scss': 'public/src/scss/**/*.scss',
   },
   'dist': {
-    'css': 'src/css/',
+    'css': 'public/src/css/',
   }
 };
 
 gulp.task('sass', done => {
   gulp.src(paths.src.scss)
-  .pipe(sourcemaps.init())
-  .pipe(sass({
-    outputStyle: 'expanded',
-  }).on('error', sass.logError))
-  .pipe(sourcemaps.write())
-  .pipe(gulp.dest(paths.dist.css))
-  .pipe(cleanCSS())
-  .pipe(rename({
-    suffix: '.min',
-  }))
-  .pipe(gulp.dest(paths.dist.css));
+    .pipe(sourcemaps.init())
+    .pipe(sass({
+      outputStyle: 'expanded',
+    }).on('error', sass.logError))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(paths.dist.css))
+    .pipe(cleanCSS())
+    .pipe(rename({
+      suffix: '.min',
+    }))
+    .pipe(gulp.dest(paths.dist.css));
   done();
 });
 

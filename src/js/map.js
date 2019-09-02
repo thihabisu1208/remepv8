@@ -1,6 +1,7 @@
 /* Note: This example requires that you consent to location sharing when
  * prompted by your browser. If you see the error "Geolocation permission
  * denied.", it means you probably did not give permission for the browser * to locate you. */
+
 let pos;
 let map;
 let bounds;
@@ -74,7 +75,8 @@ let mapStyles = [{
         "featureType": "poi",
         "elementType": "geometry",
         "stylers": [{
-            "color": "#dfd2ae"
+            // "color": "#dfd2ae"
+            "visibility": "off"
         }]
     },
     {
@@ -221,6 +223,7 @@ function initMap() {
                 map = new google.maps.Map(document.querySelector('#mapShow'), {
                     center: pos,
                     zoom: 16,
+                    zoomControl: false,
                     styles: mapStyles
                 });
 
@@ -532,7 +535,9 @@ function createMarkers(place) {
                 new google.maps.DirectionsRenderer({
                     map: map,
                     // polylineOptions: {
-                    //     strokeColor: 'blue'
+                    //     strokeColor: 'orange',
+                    //     strokeOpacity: 1.0,
+                    //     strokeWeight: 5
                     // },
                     directions: result,
                     suppressMarkers: true

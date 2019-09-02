@@ -1,0 +1,650 @@
+body {
+  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+}
+
+#top {
+  position: relative;
+  background: url(../img/bg_map.png) #FBC02D center center no-repeat;
+  background-blend-mode: color-burn;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  text-align: center;
+
+  .logo {
+    width: 85%;
+    margin: 80px auto 0;
+
+    &_img {
+      height: 90px;
+      width: 290px;
+      background: url(../img/logo_main.png) center center no-repeat;
+      background-size: contain;
+      margin: 0 auto;
+    }
+  }
+
+  .login {
+    width: 100%;
+    margin-top: 60px;
+
+    &_form {
+      width: 100%;
+
+      &_mail {
+        background: #fff;
+        position: relative;
+        width: calc(85% - 10px);
+        padding-left: 10px;
+        height: 44px;
+        font-size: 17px;
+
+        &::placeholder {
+          font-size: 17px;
+          color: #B1ABA0;
+        }
+      }
+
+      &_pass {
+        background: #fff;
+        position: relative;
+        width: calc(85% - 10px);
+        padding-left: 10px;
+        height: 44px;
+        margin-top: 15px;
+        font-size: 17px;
+
+        &::placeholder {
+          font-size: 17px;
+          color: #B1ABA0;
+        }
+      }
+
+      &_button {
+        width: 85%;
+        height: 44px;
+        background: none;
+        border: 1px solid #fff;
+        color: #fff;
+        font-size: 17px;
+        margin-top: 40px;
+        font-weight: bold;
+
+        &:active {
+          background: rgba(255, 255, 255, 0.5);
+          border: none;
+        }
+      }
+    }
+
+    &_forget {
+      margin-top: 10px;
+      color: #fff;
+
+      a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+      }
+    }
+
+    &_or {
+      width: 85%;
+      margin: 20px auto 0;
+
+      span {
+        color: #fff;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        font-size: 17px;
+
+        &::before,
+        &::after {
+          content: "";
+          display: inline-block;
+          background: #fff;
+          width: 100%;
+          height: 2px;
+        }
+
+        &::before {
+          margin-right: 1.7rem;
+        }
+
+        &::after {
+          margin-left: 1.7rem;
+        }
+      }
+    }
+
+    &_google {
+      margin-top: 30px;
+      width: 240px;
+      height: 44px;
+      background: #fff;
+      font-size: 17px;
+      color: #B1ABA0;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 17px;
+        top: calc(50% - 10px);
+        height: 20px;
+        width: 20px;
+        background: url(../img/logo_google.svg) center center no-repeat;
+        background-size: cover;
+      }
+    }
+
+    &_change {
+      position: fixed;
+      bottom: 30px;
+      font-size: 14px;
+      width: 100%;
+      color: #fff;
+
+      a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .signup {
+    width: 100%;
+    margin-top: 100px;
+
+    &_form {
+      width: 100%;
+
+      &_name {
+        background: #fff;
+        position: relative;
+        width: calc(85% - 10px);
+        padding-left: 10px;
+        height: 44px;
+        font-size: 17px;
+
+        &::placeholder {
+          font-size: 17px;
+          color: #B1ABA0;
+        }
+      }
+
+      &_mail {
+        background: #fff;
+        position: relative;
+        width: calc(85% - 10px);
+        padding-left: 10px;
+        height: 44px;
+        font-size: 17px;
+        margin-top: 15px;
+
+        &::placeholder {
+          font-size: 17px;
+          color: #B1ABA0;
+        }
+      }
+
+      &_pass {
+        background: #fff;
+        position: relative;
+        width: calc(85% - 10px);
+        padding-left: 10px;
+        height: 44px;
+        margin-top: 15px;
+        font-size: 17px;
+
+        &::placeholder {
+          font-size: 17px;
+          color: #B1ABA0;
+        }
+      }
+
+      &_button {
+        width: 160px;
+        height: 44px;
+        background: none;
+        border: 1px solid #fff;
+        color: #fff;
+        font-size: 17px;
+        margin-top: 40px;
+        font-weight: bold;
+
+        &:active {
+          background: rgba(255, 255, 255, 0.5);
+        }
+      }
+    }
+
+    &_toLogin {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+    }
+  }
+}
+
+#memo {
+  .header {
+    position: relative;
+    width: 100%;
+    height: 56px;
+    background: #FBC02D;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+
+    h2 {
+      line-height: 56px;
+      font-weight: bold;
+    }
+
+    a {
+      color: #fff;
+    }
+
+    &_cart {
+      position: absolute;
+      line-height: 56px;
+      right: 15px;
+      top: 0;
+    }
+  }
+
+  .tab {
+    height: 46px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    box-shadow: 0px 3px 3px -3px rgba(0, 0, 0, 0.192);
+    position: sticky;
+    top: 52px;
+    background: #fff;
+
+    &_nav {
+      overflow-x: scroll;
+      overflow-y: hidden;
+
+      ul {
+        display: flex;
+        height: 36px;
+
+        li {
+          list-style: none;
+          padding: 10px 20px;
+          font-size: 16px;
+          white-space: nowrap;
+          position: relative;
+
+          &.active {
+            &::after {
+              content: "";
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              width: 100%;
+              height: 2px;
+            }
+          }
+
+        }
+      }
+    }
+  }
+
+  #shops {
+    width: 100%;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .createMemo {
+    display: block;
+    font-size: 20px;
+    margin: 20px auto 50px;
+
+    .memoLabel {
+      display: block;
+      text-align: center;
+    }
+
+    .memoInput {
+      text-align: center;
+      width: 100%;
+      height: 30px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  }
+
+  .memo {
+    width: 100%;
+    height: 100%;
+
+    &_list {
+      &_inner {
+        display: grid;
+        grid-template-columns: 1fr 40px;
+        height: 40px;
+        width: 100%;
+        line-height: 40px;
+        box-shadow: 0px 3px 3px -3px rgba(0, 0, 0, 0.192);
+
+        &_naiyou {
+          p {
+            font-size: 15px;
+            margin-left: 20px;
+          }
+        }
+
+        &_check {
+          border-left: #E4E4E4 solid 1px;
+          text-align: center;
+          color: #E4E4E4;
+
+          &.active {
+            color: #2DB9CC;
+
+          }
+        }
+      }
+    }
+
+  }
+
+  .send {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+    &_form {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 59px;
+      grid-gap: 5px;
+      margin-left: 5px;
+
+      input {
+        height: 28px;
+        line-height: 28px;
+        padding-left: 10px;
+      }
+
+      &_btn {
+        border-radius: 3px;
+        margin-right: 5px;
+
+        button {
+          background: #2DB9CC;
+          height: 100%;
+          width: 100%;
+          color: #fff;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .nav {
+    position: fixed;
+    bottom: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    &_map,
+    &_memo {
+      height: 52px;
+      width: 52px;
+      border-radius: 50%;
+      color: #fff;
+      filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.2));
+
+      p {
+        height: 52px;
+        width: 52px;
+        border-radius: 50%;
+        text-align: center;
+
+        i {
+          line-height: 52px;
+        }
+      }
+    }
+
+    &_map {
+      display: inline-block;
+      background: #FBC02D;
+      margin-left: 20px;
+    }
+
+    &_memo {
+      background: #2DB9CC;
+      margin-right: 20px;
+    }
+  }
+
+  .memoData {
+    display: none;
+  }
+
+  .showMemoData {
+    display: block;
+  }
+}
+
+#cart {
+  .header {
+    position: relative;
+    width: 100%;
+    height: 56px;
+    background: #FBC02D;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+
+    h2 {
+      line-height: 56px;
+      font-weight: bold;
+    }
+
+    a {
+      color: #fff;
+    }
+
+    &_toBack {
+      position: absolute;
+      line-height: 56px;
+      left: 15px;
+      top: 0;
+    }
+  }
+}
+
+#map {
+  height: 100vh;
+  overflow: hidden;
+
+  .header {
+    position: fixed;
+    width: 100%;
+    height: 56px;
+    background: #FBC02D;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    overflow: hidden;
+    z-index: 10;
+
+    h2 {
+      line-height: 56px;
+      font-weight: bold;
+    }
+
+    a {
+      color: #fff;
+    }
+
+    &_toBack {
+      position: absolute;
+      line-height: 56px;
+      left: 15px;
+      top: 0;
+    }
+
+    &_nav {
+      position: absolute;
+      right: -10px;
+      top: 0px;
+      height: 56px;
+      width: 56px;
+      border-radius: 50%;
+
+      &_icon {
+        display: inline-block;
+        position: relative;
+        background: #fff;
+        height: 4px;
+        width: 4px;
+        border-radius: 50%;
+        top: 18px;
+
+        &::before,
+        &::after {
+          display: inline-block;
+          position: absolute;
+          content: "";
+          background: #fff;
+          height: 4px;
+          width: 4px;
+          border-radius: 50%;
+        }
+
+        &::before {
+          top: -8px;
+          left: 0;
+        }
+
+        &::after {
+          top: -16px;
+          left: 0;
+        }
+      }
+    }
+  }
+
+  .space {
+    height: 56px;
+    overflow: hidden;
+  }
+
+  #mapShow {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 56px);
+  }
+
+  .nav {
+    position: fixed;
+    bottom: -100%;
+    width: 100%;
+    background: #fff;
+    border-radius: 8px;
+    filter: drop-shadow(0px -3px 3px rgba(0, 0, 0, 0.2));
+    transition: all 0.3s ease-in;
+
+    &_bar {
+      width: 100%;
+      text-align: center;
+
+      span {
+        display: inline-block;
+        height: 4px;
+        width: 36px;
+        background: #FBC02D;
+        border-radius: 3px;
+      }
+    }
+
+    &_category {
+      width: 85%;
+      margin: 30px auto 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-row-gap: 25px;
+
+      &_box {
+        &_icon {
+          position: relative;
+          height: 60px;
+          width: 60px;
+          border-radius: 50%;
+          background: #F8F7F8;
+          margin: 0 auto;
+
+          img {
+            width: 100%;
+            filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.2));
+          }
+
+          // &::after {
+          //   content: "";
+          //   display: inline-block;
+          //   // background: url(../img/pin_01.png) center center no-repeat;
+          //   background-size: contain;
+          //   height: 100%;
+          //   width: 100%;
+          //   position: absolute;
+          //   top: calc(50% - 22px);
+          //   left: calc(50% - 22px);
+          // }
+        }
+
+        &_word {
+          text-align: center;
+          margin-top: 15px;
+
+          p {
+            font-size: 12px;
+            color: #B1ABA0;
+          }
+        }
+      }
+    }
+
+    &_config {
+      display: flex;
+      justify-content: space-between;
+      width: 85%;
+      margin: 40px auto 0;
+
+      a {
+        display: inline-block;
+        border: #FBC02D solid 1px;
+        color: #FBC02D;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 18px;
+        width: 156px;
+        height: 36px;
+        line-height: 36px;
+        text-align: center;
+        text-decoration: none;
+        margin: 0 10px 30px;
+      }
+    }
+  }
+
+  .nav[data-state="active"] {
+    bottom: 0px;
+  }
+}
