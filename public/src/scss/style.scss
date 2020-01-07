@@ -1,17 +1,34 @@
+@font-face {
+  font-family: "Phenomena-Bold";
+  src: url("../fonts/Phenome-B.otf");
+}
+
+
 body {
   font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
 }
 
+main .header h2 {
+  font-family: 'Phenomena-Bold', "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+}
+
 #top {
   position: relative;
-  background: url(../img/bg_map.png) #FBC02D center center no-repeat;
-  background-blend-mode: color-burn;
+  background: url(../img/bg_map.png) center center no-repeat;
+  background-size: cover;
   height: 100vh;
   width: 100vw;
   margin: 0;
   padding: 0;
   overflow: hidden;
   text-align: center;
+
+  .root {
+    position: absolute;
+    background: rgba(251, 193, 45, 0.93);
+    height: 100%;
+    width: 100%;
+  }
 
   .logo {
     width: 85%;
@@ -40,6 +57,7 @@ body {
         padding-left: 10px;
         height: 44px;
         font-size: 17px;
+        border: none;
 
         &::placeholder {
           font-size: 17px;
@@ -55,6 +73,7 @@ body {
         height: 44px;
         margin-top: 15px;
         font-size: 17px;
+        border: none;
 
         &::placeholder {
           font-size: 17px;
@@ -122,12 +141,13 @@ body {
 
     &_google {
       margin-top: 30px;
-      width: 240px;
+      width: 280px;
       height: 44px;
       background: #fff;
       font-size: 17px;
       color: #B1ABA0;
       position: relative;
+      border: none;
 
       &::before {
         content: "";
@@ -170,6 +190,7 @@ body {
         padding-left: 10px;
         height: 44px;
         font-size: 17px;
+        border: none;
 
         &::placeholder {
           font-size: 17px;
@@ -185,6 +206,7 @@ body {
         height: 44px;
         font-size: 17px;
         margin-top: 15px;
+        border: none;
 
         &::placeholder {
           font-size: 17px;
@@ -200,6 +222,7 @@ body {
         height: 44px;
         margin-top: 15px;
         font-size: 17px;
+        border: none;
 
         &::placeholder {
           font-size: 17px;
@@ -229,6 +252,111 @@ body {
       left: 10px;
     }
   }
+
+  .road {
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    #outerContainer {
+      position: absolute;
+      width: 900px;
+      height: 600px;
+      top: calc(50% - 300px);
+      left: calc(50% - 450px);
+    }
+
+    #container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .circle {
+      border-radius: 50%;
+      background-color: #FBC02D;
+      width: 300px;
+      height: 300px;
+      position: absolute;
+      opacity: 0;
+      animation: scaleIn 5s infinite cubic-bezier(.36, .11, .89, .32);
+    }
+
+    .item {
+      z-index: 100;
+      padding: 5px;
+    }
+
+    .item img {
+      width: 300px;
+    }
+
+
+    @keyframes scaleIn {
+      from {
+        transform: scale(.5, .5);
+        opacity: .5;
+      }
+
+      to {
+        transform: scale(2.5, 2.5);
+        opacity: 0;
+      }
+    }
+  }
+
+  .fade-enter {
+    opacity: 0;
+  }
+
+  .fade-enter-to {
+    opacity: 1;
+  }
+
+  .fade-enter-active {
+    transition: all 1s 0.5s ease;
+  }
+
+  .fade-leave {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  .fade-leave-to {
+    opacity: 0;
+  }
+
+  .fade-leave-active {
+    transition: all .5s 0s ease;
+  }
+
+  .slide-enter {
+    opacity: 0;
+  }
+
+  .slide-enter-to {
+    opacity: 1;
+  }
+
+  .slide-enter-active {
+    transition: all .3s 0.3s ease;
+  }
+
+  .slide-leave {
+    opacity: 1;
+  }
+
+  .slide-leave-to {
+    opacity: 0;
+  }
+
+  .slide-leave-active {
+    transition: all .3s 0s ease;
+  }
 }
 
 #memo {
@@ -238,12 +366,12 @@ body {
     height: 56px;
     background: #FBC02D;
     text-align: center;
-    font-size: 24px;
     color: #fff;
 
     h2 {
       line-height: 56px;
       font-weight: bold;
+      font-size: 34px;
     }
 
     a {
@@ -254,6 +382,7 @@ body {
       position: absolute;
       line-height: 56px;
       right: 15px;
+      font-size: 24px;
       top: 0;
     }
   }
@@ -268,6 +397,7 @@ body {
     position: sticky;
     top: 52px;
     background: #fff;
+    color: #707070;
 
     &_nav {
       overflow-x: scroll;
@@ -275,14 +405,16 @@ body {
 
       ul {
         display: flex;
-        height: 36px;
+        height: 32px;
+        padding-top: 3px;
 
         li {
           list-style: none;
-          padding: 10px 20px;
-          font-size: 16px;
+          padding: 0 20px;
+          font-size: 17px;
           white-space: nowrap;
           position: relative;
+          line-height: 32px;
 
           &.active {
             &::after {
@@ -310,19 +442,47 @@ body {
     display: block;
     font-size: 20px;
     margin: 20px auto 50px;
+    width: 100%;
+
+    .memoHeader {
+      text-align: center;
+      margin: 20px 0;
+      color: #707070;
+    }
 
     .memoLabel {
       display: block;
       text-align: center;
     }
 
-    .memoInput {
-      text-align: center;
-      width: 100%;
-      height: 30px;
-      font-size: 20px;
-      cursor: pointer;
+    &_inner {
+      width: 95%;
+      margin: 0 auto;
+      color: #707070;
+
+      .memoInput {
+        text-align: left;
+        width: calc(100% - 10px);
+        height: 30px;
+        font-size: 20px;
+        border: solid 1px #000;
+        cursor: pointer;
+        margin: 0;
+        padding: 5px;
+        transition: 0.3s;
+        border-radius: 3px;
+
+        &:focus {
+          border: solid 1px #FBC02D;
+          outline: none;
+        }
+      }
     }
+
+    ul {
+      margin-top: 30px;
+    }
+
   }
 
   .memo {
@@ -342,6 +502,11 @@ body {
           p {
             font-size: 15px;
             margin-left: 20px;
+
+
+            &.finished {
+              text-decoration: line-through;
+            }
           }
         }
 
@@ -449,12 +614,12 @@ body {
     height: 56px;
     background: #FBC02D;
     text-align: center;
-    font-size: 24px;
     color: #fff;
 
     h2 {
       line-height: 56px;
       font-weight: bold;
+      font-size: 34px;
     }
 
     a {
@@ -465,6 +630,7 @@ body {
       position: absolute;
       line-height: 56px;
       left: 15px;
+      font-size: 26px;
       top: 0;
     }
   }
@@ -488,6 +654,7 @@ body {
     h2 {
       line-height: 56px;
       font-weight: bold;
+      font-size: 34px;
     }
 
     a {

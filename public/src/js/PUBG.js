@@ -1,7 +1,11 @@
 new Vue({
   el: "#top",
   data: {
-    inUp: true
+    inUp: true,
+    roading: false,
+    time: null,
+    now: null,
+    mn: null,
   },
   methods: {
     change() {
@@ -41,8 +45,20 @@ new Vue({
         });
     }
   },
-  mounted() {
-
+  created() {
+    this.time = new Date().getTime()
+    window.addEventListener("load", () => {
+      this.now = new Date().getTime()
+      this.mn = this.now - this.time
+      if (this.mn <= 1000) {
+        setTimeout(() => {
+          this.roading = !this.roading
+        }, 2000 - (this.mn));
+        return;
+      } else {
+        this.roading = !this.roading
+      }
+    })
   }
 })
 

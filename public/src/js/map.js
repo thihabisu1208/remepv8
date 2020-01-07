@@ -465,7 +465,7 @@ function getNearbyDepartments(position) {
         radius: radius,
         // rankBy: google.maps.places.RankBy.DISTANCE,
         // keyword: 'convenience store',
-        keyword: 'department'
+        keyword: 'clothes store'
         // opennow: true
     };
 
@@ -538,7 +538,7 @@ function createMarkers(place) {
 
     circle.addListener('mouseover', () => {
         var notificationIcon = '/src/img/logo_main.png';
-        var text = 'HEY! ' + place.name + ' is near you!';
+        var text = place.name + ' が近くにあるよ！';
         var notification = new Notification('Shop', {
             body: text,
             icon: notificationIcon
@@ -552,9 +552,9 @@ function createMarkers(place) {
                 'name',
                 'formatted_address',
                 'geometry',
-                'rating',
                 'website',
-                'photos'
+                'photos',
+                'opening_hours'
             ]
         };
         /* Only fetch the details of a place when the user clicks on a marker.
@@ -613,11 +613,12 @@ function showDetails(placeResult, marker, status) {
         let placeInfowindow = new google.maps.InfoWindow();
         let rating = 'None';
         if (placeResult.rating) rating = placeResult.rating;
+        // if (placeResult.opening_hours) opening_hours = placeResult.opening_hours;
         placeInfowindow.setContent(
             `<div>
-                <strong>${placeResult.name}</strong>
+                <strong style="color: #A4C73D; font-size: 24px;">${placeResult.name}</strong>
                 <br>
-                Rating: ${rating}
+                <br/> 
                 <br/> 
                 Address: ${placeResult.formatted_address}
             </div>`

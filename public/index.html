@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no">
-  <link rel="shortcut icon" href="../src/img/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="../src/css/reset.css">
-  <link rel="stylesheet" href="../src/css/style.css">
+  <link rel="shortcut icon" href="/src/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="src/css/reset.css">
+  <link rel="stylesheet" href="src/css/style.css">
   <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
   <link rel="manifest" href="manifest.json">
   <title>Login</title>
@@ -14,29 +14,49 @@
 
 <body>
   <main id="top">
-    <section class="logo">
-      <h1 class="logo_img"></h1>
-    </section>
-    <section class="login" v-if="inUp">
-      <form @submit.prevent="login" class="login_form" id="loginForm">
-        <input type="text" placeholder="E-mail" class="login_form_mail">
-        <input type="password" placeholder="Password" class="login_form_pass">
-        <button class="login_form_button">ログイン</button>
-      </form>
-      <p class="login_forget">パスワードを忘れた方は<a href="#">こちら</a></p>
-      <p class="login_or"><span>or</span></p>
-      <button type="button" class="login_google" @click="googleLogin">Googleでログイン</button>
-      <p class="login_change">どちらのアカウントもお持ちでない方は<a href="#" @click="change">こちら</a></p>
-    </section>
-    <section class="signup" v-else>
-      <form class="signup_form" id="signupForm" @submit.prevent="signUp">
-        <!-- <input type="text" placeholder="Name" class="signup_form_name"> -->
-        <input type="text" placeholder="E-mail" class="signup_form_mail">
-        <input type="password" placeholder="Password" class="signup_form_pass">
-        <button class="signup_form_button">続行</button>
-      </form>
-      <p class="signup_toLogin" @click="change"><i class="fas fa-fw fa-2x fa-arrow-left" style="color: #fff;"></i></p>
-    </section>
+    <transition name="fade" apper>
+      <div class="root" v-if="roading" key="main">
+        <section class="logo">
+          <h1 class="logo_img"></h1>
+        </section>
+        <transition name="slide">
+          <section class="login" v-if="inUp" key="login">
+            <form @submit.prevent="login" class="login_form" id="loginForm">
+              <input type="text" placeholder="E-mail" class="login_form_mail">
+              <input type="password" placeholder="Password" class="login_form_pass">
+              <button class="login_form_button">ログイン</button>
+            </form>
+            <p class="login_forget">パスワードを忘れた方は<a href="#">こちら</a></p>
+            <p class="login_or"><span>or</span></p>
+            <button type="button" class="login_google" @click="googleLogin">Googleでログイン</button>
+            <p class="login_change">どちらのアカウントもお持ちでない方は<a href="#" @click="change">こちら</a></p>
+          </section>
+          <section class="signup" v-else key="signup">
+            <form class="signup_form" id="signupForm" @submit.prevent="signUp">
+              <!-- <input type="text" placeholder="Name" class="signup_form_name"> -->
+              <input type="text" placeholder="E-mail" class="signup_form_mail">
+              <input type="password" placeholder="Password" class="signup_form_pass">
+              <button class="signup_form_button">続行</button>
+            </form>
+            <p class="signup_toLogin" @click="change"><i class="fas fa-fw fa-2x fa-arrow-left" style="color: #fff;"></i>
+            </p>
+          </section>
+      </div>
+      </div>
+      <div class="road" v-else key="road">
+        <div id="outerContainer">
+          <div id="container">
+            <div class="item">
+              <img src="src/img/logo_main.png" />
+            </div>
+            <div class="circle" style="animation-delay: -3s"></div>
+            <div class="circle" style="animation-delay: -2s"></div>
+            <div class="circle" style="animation-delay: -1s"></div>
+            <div class="circle" style="animation-delay: 0s"></div>
+          </div>
+        </div>
+      </div>
+    </transition>
   </main>
 
   <!-- The core Firebase JS SDK is always required and must be listed first -->
