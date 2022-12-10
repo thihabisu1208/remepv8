@@ -16,7 +16,7 @@
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.4",
-    "http-server": "^0.10.0"
+    "http-server": "^14.1.1"
   },
   "dependencies": {},
   "description": "map app",
